@@ -10,25 +10,33 @@ class TestUser(unittest.TestCase):
     """
 
     def setUp(self):
-        '''
-        Set up method to run before each test cases.
-        '''
-        self.new_user = User("Joy","Machuka","0001") # create user object
-        self.new_credentials = Credentials("instagram","msmachuka","Fr1d@y") #create credentials object
+      '''
+      Set up method to run before each test cases.
+      '''
+      self.new_user = User("Joy","Machuka","0001") # create user object
+      self.new_credentials = Credentials("instagram","msmachuka","Fr1d@y") #create credentials object
 
     def test_init(self):
-        '''
-        test_init test case to test if the object is initialized properly
-        '''
+      '''
+      test_init test case to test if the object is initialized properly
+      '''
 
-        self.assertEqual(self.new_user.fname,"Joy")
-        self.assertEqual(self.new_user.sname,"Machuka")
-        self.assertEqual(self.new_user.loginkey,"0001")
+      self.assertEqual(self.new_user.fname,"Joy")
+      self.assertEqual(self.new_user.sname,"Machuka")
+      self.assertEqual(self.new_user.loginkey,"0001")
 
 
-        self.assertEqual(self.new_credentials.account,"instagram")
-        self.assertEqual(self.new_credentials.username,"msmachuka")
-        self.assertEqual(self.new_credentials.password,"Fr1d@y") 
+      self.assertEqual(self.new_credentials.account,"instagram")
+      self.assertEqual(self.new_credentials.username,"msmachuka")
+      self.assertEqual(self.new_credentials.password,"Fr1d@y")
+
+    def test_save_credentials(self):
+      '''
+      test_save_credentials test case to test if the credentials object is saved into
+        the credential list
+      '''
+      self.new_credentials.save_credentials() # saving the new contact
+      self.assertEqual(len(Credentials.credentials_list),1)    
 
 if __name__ == '__main__':
     unittest.main()
