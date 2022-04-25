@@ -1,17 +1,19 @@
 class User:
   user_list = [] # Empty user list
 
-  def __init__(self,username,password):
+  def __init__(self,fname,sname,loginkey):
 
     """
     __init__ method that helps us define properties for our objects.
     Args:
-        username : New user username.
-        password : New user password.
+        fname : New user first name.
+        sname : New user second name.
+        loginkey: New user loginkey
     """
 
-    self.username = username
-    self.password = password 
+    self.fname = fname
+    self.sname = sname
+    self.loginkey = loginkey 
 
   pass
 
@@ -27,6 +29,7 @@ class Credentials :
     """
     __init__ method that helps us define properties for our objects.
     Args:
+      account: account type
       username : New user username.
       password : New user password.
     """
