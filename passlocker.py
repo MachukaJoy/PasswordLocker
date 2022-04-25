@@ -43,3 +43,15 @@ class Credentials :
     '''
 
     Credentials.credentials_list.append(self)    
+  def delete_credentials(self):
+    """
+    delete_credentials method deletes credential objects from credential_list
+    """
+    Credentials.credentials_list.remove(self)
+
+  @classmethod
+  def display_credentials(cls):
+    '''
+    method that returns the credentials list
+    '''
+    return cls.credentials_list
