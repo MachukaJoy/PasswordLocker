@@ -60,5 +60,18 @@ class TestUser(unittest.TestCase):
       self.new_credentials.delete_credentials() #deleting credentials
       self.assertEqual(len(Credentials.credentials_list),0)
 
+    def test_find_credential_by_account(self):
+      '''
+      test to check if we can find a credential by account number and display information
+      '''
+
+      self.new_credentials.save_credentials()
+      test_credentials = Credentials("instagram","msmachuka","Fr1d@y") # new credentials
+      test_credentials.save_credentials()
+
+      found_credentials = Credentials.find_by_account("instagram")
+
+      self.assertEqual(found_credentials.account,test_credentials.account)
+
 if __name__ == '__main__':
     unittest.main()
