@@ -125,7 +125,7 @@ def main() :
             password = input()
           else:
             print("check your input once more")
-          save_credentials(create_user(account, username, password))
+          save_credentials(create_credentials(account, username, password))
           print("\n")
           print("**"*10)
           print(f"Your account name -> {account} \n Account User Name ->  {username} \n Account Passcode ->  {password} ")
@@ -150,20 +150,17 @@ def main() :
           print("\n")  
         elif user_input == "VIEW":
           if display_credentials():
-            print("hello, your credentials are as follows:...")
-            for Credential in display_credentials():
-              print("-----"*20)
-              print(f"Account Type -> {account}")
-              print(f"Your{account} details are as follows:")
-              print("--"*10)
-              print(f"Account Username -> {username}")
-              print("--"*10)
-              print(f"Account Password -> {password}")
-              print("\n")                                
+            print("Here is a list of all your accounts")
+            print('\n')
+
+            for credentials in display_credentials():
+              print(f"{credentials.account} {credentials.username} .....{credentials.password}")
+
+            print('\n')
           else:
-            print("\n")
-            print("We do not have those credentials")
-            print("\n")
+            print('\n')
+            print("You dont seem to have any accounts saved yet")
+            print('\n')
         elif user_input == "DEL":
           print("Provide the account Name to be deleted")
           account = input()
@@ -173,10 +170,30 @@ def main() :
             print("Your Account Credentials have been deleted Successfully")
           else:
             print("This Account credential does not exist")
-        
-          
+        elif user_input == "EXIT":
+          print("Thankyou for using us")
+          print("---"*10)
+          print("\n")    
+          break   
+        else:
+          print("Wrong credentials, please try again")
+    elif user_input == "IN":
+      print("Proceed to login")
+      
+      print("Provide Your Username,....")
+      username= input()
+      
+      print("Password....")
+      password = input()
+      if username == username and password ==password:
+        print("Successfully Logged In..welcome.......")
+        print("**"*10)
+      print("\n") 
+    elif user_input == "EXIT":
+      print("Thankyou for using us")
+      print("---"*10)
+      print("\n")    
 
 
 if __name__ == '__main__':
-
-        main()
+  main()
