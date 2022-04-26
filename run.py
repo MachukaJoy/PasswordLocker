@@ -2,6 +2,8 @@
 
 from passlocker import User
 from passlocker import Credentials
+import random
+import string
 
 
 def create_user(fname, sname, loginkey):
@@ -98,7 +100,32 @@ def main() :
         print("VIEW to view credential account")
         print("DEL to delete credential account")
         print("EXIT to exit password locker")
+
+        user_input = input()
+        if user_input == "CRE":
+          print("Now creating a new credentials account details...")
+          print("*-")
           
+          print("Enter the account type e.g twitter , instagram...")
+          account= input()
+          
+          print("Enter your username...")
+          username = input()
+
+          print("Can we generate a password for you ..Y/N Y(yes) and N(No)")
+          password = input()
+
+          if password == "Y":
+            print("provide the length of your passcode e.g 10")
+            password_length = int(input())
+            passwordcharacters = string.ascii_letters +string.digits
+            password = "".join(random.choice(passwordcharacters )for i in range(password_length))
+          elif password == "N":
+              print("Please provide your security passcode ....")
+              password = input()
+          else:
+              print("check your input once more")
+        
           
 
 
