@@ -10,6 +10,12 @@ def create_user(fname, sname, loginkey):
   '''
   new_user = User(fname, sname, loginkey)
   return new_user
+def create_credentials(account,username,password):
+        """
+        Function to create new credentials
+        """
+        new_credentials = Credentials(account,username,password)
+        return new_credentials        
 
 def save_user(user):
   '''
@@ -55,35 +61,45 @@ def main() :
   print('\n')
 
   while True: 
-      print("Lets create an account or Login to proceed or exit. Use IN to login, CA to Create Account or EXIT to exit application ")
-      # print("lets proceed use IN or CA")
-      user_input =input()
-      if user_input =="CA":
-          print("Proceed to create your password Locker Account")
-          print("--"*20)
-          print("Enter your First Name")
-          fname = input()
-          print("Enter your Last Name")
-          sname = input()
-          print("Enter your login key")
-          loginkey = input()
-    
-          #Saving the user created credentials
-          save_user(create_user(fname, sname, loginkey))
-          print("Your password-locker account created successfully...please proceed to login")
-          print("--" *20)
-          print(f"FullNames -> {fname}{sname} \n User Name -> {user_name} \nloginkey/loginkey -> {loginkey}")
-          print("|     ___   ____      _   ")
-          print("|    |   | |  __  |  | \  |")
-          print("|___ |___| |___|  |  |  \_|")
-          print("Please provide your user Name")
-          usernameaccount = input()
-          print("Provide your loginkey")
-          loginkey = input()
-          if usernameaccount == user_name and loginkey ==loginkey:
-              print("Successfully Logged In..welcome.......")
-              print("**"*10)
-          pass
+    print("Lets create an account or Login to proceed or exit. Use IN to login, CA to Create Account or EXIT to exit application ")
+    # print("lets proceed use IN or CA")
+    user_input =input()
+    if user_input =="CA":
+      print("Proceed to create your password Locker Account")
+      print("--"*20)
+      print("Enter your First Name")
+      fname = input()
+      print("Enter your Last Name")
+      sname = input()
+      print("Enter your login key")
+      loginkey = input()
+
+      #Saving the user created credentials
+      save_user(create_user(fname, sname, loginkey))
+      print("Your password-locker account created successfully...please proceed to login")
+      print("--" *20)
+      print(f"FullNames -> {fname}{sname} \n User Name -> {user_name} \nloginkey/loginkey -> {loginkey}")
+      print("|     ___   ____      _   ")
+      print("|    |   | |  __  |  | \  |")
+      print("|___ |___| |___|  |  |  \_|")
+      print("Please provide your user Name")
+      usernameaccount = input()
+      print("Provide your loginkey")
+      login = input()
+      if usernameaccount == user_name and login ==loginkey:
+        print("Successfully Logged In..welcome.......")
+        print("**"*10)
+
+      pass
+      while True:
+        print("Use the following initials to create, view and delete accounts")
+        print("CRE to create new credential account")
+        print("SAVE to save existing credentials account details")
+        print("VIEW to view credential account")
+        print("DEL to delete credential account")
+        print("EXIT to exit password locker")
+          
+          
 
 
 if __name__ == '__main__':
