@@ -131,6 +131,23 @@ def main() :
           print(f"Your account name -> {account} \n Account User Name ->  {username} \n Account Passcode ->  {password} ")
           print("**"*10)
           print("\n")
+        elif user_input == "SAVE":
+          print("Lets save your credentials...")
+          print("**"*10)
+          
+          print("Enter Account type name e.g instaram..")
+          account = input()
+          
+          print("Enter Account username e.g msmachuka..")
+          username = input()
+          
+          print("Enter your account security passcode..")
+          password = input()
+          
+          save_credentials(create_credentials(account, username, password))
+          print("\n")
+          print(f"hello {username} your credentails have been saved successfully")
+          print("\n")  
         
           
 
