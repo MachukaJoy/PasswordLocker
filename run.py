@@ -11,6 +11,12 @@ def create_user(fname, sname, loginkey):
   new_user = User(fname, sname, loginkey)
   return new_user
 
+def save_user(user):
+  '''
+  Function to save user
+  '''
+  user.save_user()
+
 
 def save_credentials(credentials):
   '''

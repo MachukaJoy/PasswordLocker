@@ -73,5 +73,9 @@ class TestUser(unittest.TestCase):
 
       self.assertEqual(found_credentials.account,test_credentials.account)
 
+    def test_save_User(self):
+      self.new_user.save_user()
+      self.assertEqual(len(User.user_list),1)
+
 if __name__ == '__main__':
     unittest.main()

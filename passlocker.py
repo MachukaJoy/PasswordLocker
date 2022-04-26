@@ -15,6 +15,14 @@ class User:
     self.sname = sname
     self.loginkey = loginkey 
 
+  def save_user(self):
+
+    """
+    save_credentials method saves contact objects into contact_list
+    """
+
+    User.user_list.append(self)
+
   pass
 
 #Credentials class
