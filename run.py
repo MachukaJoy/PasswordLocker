@@ -4,6 +4,8 @@ from passlocker import User
 from passlocker import Credentials
 import random
 import string
+import sys
+
 
 
 def create_user(fname, sname, loginkey):
@@ -173,8 +175,9 @@ def main() :
         elif user_input == "EXIT":
           print("Thankyou for using us")
           print("---"*10)
-          print("\n")    
-          break   
+          print("\n")
+          sys.exit() 
+          
         else:
           print("Wrong credentials, please try again")
     elif user_input == "IN":
@@ -192,7 +195,8 @@ def main() :
     elif user_input == "EXIT":
       print("Thankyou for using us")
       print("---"*10)
-      print("\n")    
+      print("\n")
+      sys.exit()    
 
 
 if __name__ == '__main__':
