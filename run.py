@@ -164,6 +164,15 @@ def main() :
             print("\n")
             print("We do not have those credentials")
             print("\n")
+        elif user_input == "DEL":
+          print("Provide the account Name to be deleted")
+          account = input()
+          if find_credentials(account):
+            del_credentials(find_credentials(account))
+            print("--"*10)
+            print("Your Account Credentials have been deleted Successfully")
+          else:
+            print("This Account credential does not exist")
         
           
 
