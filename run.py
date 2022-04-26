@@ -38,3 +38,22 @@ def display_credentials():
   Function that returns all the saved credentials
   '''
   return Credentials.display_credentials()
+
+
+# create main function
+def main() :
+  print("Hi!This is Password Manager.What is your name")
+  my_name = input()
+
+  print(f"Great ! What would you like to do { my_name }?")
+  print('\n')
+
+  while True:
+    print("Choose a short code : ca - create a new credential, dc - display credentials, fc -find credential, ex -exit credential list ")
+
+    short_code = input().lower()
+
+
+if __name__ == '__main__':
+
+        main()
