@@ -121,10 +121,16 @@ def main() :
             passwordcharacters = string.ascii_letters +string.digits
             password = "".join(random.choice(passwordcharacters )for i in range(password_length))
           elif password == "N":
-              print("Please provide your security passcode ....")
-              password = input()
+            print("Please provide your security passcode ....")
+            password = input()
           else:
-              print("check your input once more")
+            print("check your input once more")
+          save_credentials(create_user(account, username, password))
+          print("\n")
+          print("**"*10)
+          print(f"Your account name -> {account} \n Account User Name ->  {username} \n Account Passcode ->  {password} ")
+          print("**"*10)
+          print("\n")
         
           
 
