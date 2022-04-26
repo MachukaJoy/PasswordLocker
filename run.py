@@ -148,6 +148,22 @@ def main() :
           print("\n")
           print(f"hello {username} your credentails have been saved successfully")
           print("\n")  
+        elif user_input == "VIEW":
+          if display_credentials():
+            print("hello, your credentials are as follows:...")
+            for Credential in display_credentials():
+              print("-----"*20)
+              print(f"Account Type -> {account}")
+              print(f"Your{account} details are as follows:")
+              print("--"*10)
+              print(f"Account Username -> {username}")
+              print("--"*10)
+              print(f"Account Password -> {password}")
+              print("\n")                                
+          else:
+            print("\n")
+            print("We do not have those credentials")
+            print("\n")
         
           
 
